@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
+
 @Table(name="offreemplois")
 @Entity
 @Data
@@ -19,4 +21,11 @@ public class OffreEmploi {
     @Temporal(TemporalType.DATE)
     private Date datePublication;
     private StatusOffre status;
+
+    @ManyToOne
+    @JoinColumn(name = "idRecruteur")
+    private Recruteur recruteur;
+
+    @OneToMany(mappedBy = "offreEmploi")
+    private List<Candidature> candidatures;
 }
