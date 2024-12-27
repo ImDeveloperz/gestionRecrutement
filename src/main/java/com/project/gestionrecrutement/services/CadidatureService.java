@@ -1,4 +1,4 @@
-package com.project.gestionrecrutement.controllers;
+package com.project.gestionrecrutement.services;
 
 import com.project.gestionrecrutement.repositories.CandidatureRepository;
 import org.springframework.beans.factory.annotation.Autowired;

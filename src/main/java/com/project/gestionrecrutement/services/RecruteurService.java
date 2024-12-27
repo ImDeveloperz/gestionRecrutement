@@ -1,12 +1,11 @@
-package com.project.gestionrecrutement.controllers;
+package com.project.gestionrecrutement.services;
 
-import com.project.gestionrecrutement.repositories.CandidatureRepository;
 import com.project.gestionrecrutement.repositories.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CandidatService {
+public class RecruteurService {
 
     @Autowired
     private UtilisateurRepository utilisateurRepository;
