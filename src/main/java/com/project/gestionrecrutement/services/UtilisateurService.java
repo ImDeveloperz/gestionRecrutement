@@ -17,6 +17,14 @@ public class UtilisateurService {
         return utilisateurRepository.findAll();
     }
 
+    public Utilisateur login(String email,String password) {
+        Utilisateur utilisateur = utilisateurRepository.findByEmail(email);
+        if(utilisateur != null && utilisateur.getPassword().equals(password)){
+            return utilisateur;
+        }
+        return null;
+    }
+
     public Utilisateur getUtilisateurById(Long id) {
         return utilisateurRepository.findById(id).orElse(null);
     }

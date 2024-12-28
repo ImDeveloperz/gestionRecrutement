@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping("/offreEmploi")
 public class OffreEmploiController {
 
     @Autowired
     private OffreEmploiService offreEmploiService;
 
-    @GetMapping("/offreEmploi")
+    @GetMapping
     public String getAllOffreEmploi(Model model) {
         List<OffreEmploi> offreEmploi = offreEmploiService.getAllOffreEmploi();
         model.addAttribute("listOffreEmploi", offreEmploi);

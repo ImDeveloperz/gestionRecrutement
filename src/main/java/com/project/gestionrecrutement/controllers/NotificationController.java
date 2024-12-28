@@ -8,16 +8,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/notifications")
 public class NotificationController {
 
     @Autowired
     private NotificationService notificationService;
-
-    @GetMapping("/ListesDesNotifications")
+    @GetMapping
     public String getAllNotifications(Model model) {
         List<Notification> notifications = notificationService.getAllNotifications();
         model.addAttribute("listNotifications", notifications);
