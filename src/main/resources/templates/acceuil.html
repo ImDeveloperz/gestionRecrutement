@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" th:href="@{/css/stylesAcceuil.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+    <div class="header">
+        <h1 class="title"></h1>
+        <p class="description">Bienvenue sur notre plateforme de gestion de recrutement : simplifiez vos processus, connectez les talents aux opportunités et recrutez efficacement</p>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/register}" class="button">Register</a>
+        <a th:href="@{/login}" class="button">Login</a>
+    </div>
+</div>
+</body>
+</html>
