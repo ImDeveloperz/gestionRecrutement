@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Créer une Candidature</title>
+</head>
+<body>
+<h1>Créer une Candidature</h1>
+<form th:action="@{/candidatures}" th:object="${candidature}" method="post">
+    <label for="statusCondidature">Statut :</label>
+    <select id="statusCondidature" th:field="*{statusCondidature}">
+        <option value="EN_ATTENTE">En attente</option>
+        <option value="ACCEPTE">Accepté</option>
+        <option value="REFUSE">Refusé</option>
+    </select>
+    <br>
+    <label for="idCandidat">Candidat :</label>
+    <select id="idCandidat" th:field="*{candidat.id}" th:each="candidat : ${candidats}" th:value="${candidat.id}" th:text="${candidat.nom} + ' ' + ${candidat.prenom}">
+    </select>
+    <br>
+    <label for="idOffreEmploi">Offre d'emploi :</label>
+    <select id="idOffreEmploi" th:field="*{offreEmploi.id}" th:each="offre : ${offresEmploi}" th:value="${offre.id}" th:text="${offre.titre}">
+    </select>
+    <br>
+    <button type="submit">Enregistrer</button>
+</form>
+<a th:href="@{/candidatures}">Retour à la liste</a>
+</body>
+</html>

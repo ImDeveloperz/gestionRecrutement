@@ -10,7 +10,4 @@ public class GestionRecrutementApplication {
 		SpringApplication.run(GestionRecrutementApplication.class, args);
 	}
 
-	// comment1
-
-	//abdelghani
 }
